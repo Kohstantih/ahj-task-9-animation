@@ -1,0 +1,489 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+}
+
+.box {
+    width: 33%;
+    border: 5px solid blue;
+    padding: 20px;
+    flex: auto;
+}
+
+.box_title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+                                        /* Collapse */
+/* --------------------------------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------------------------- */
+
+.btn_collapse {
+    color: white;
+    background-color: rgb(54, 127, 236);
+    opacity: 0.8;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 10px;
+    margin-bottom: 20px;
+
+    transition: all 1s ease;
+}
+
+
+.btn_collapse:hover {
+    outline: 5px solid rgb(0, 174, 255);
+    opacity: 1;
+}
+
+.btn_collapse:active {
+    background-color: blue;
+  }
+
+.collapsible_container {
+    border: 1px solid gray;
+    height: 0;
+    overflow-y: hidden;
+
+    display: none;
+
+    animation: hide 1s linear;
+}
+
+.show {
+    display: block;
+    height: 180px;
+    animation: show 1s linear;
+}
+
+@keyframes show {
+    0% {
+        display: none;
+        height: 0;
+    }
+
+    1% {
+        display: block;
+    }
+
+    100% {
+        display: block;
+        height: 180px;
+    }
+}
+
+@keyframes hide {
+    0% {
+        display: block;
+        height: 180px;
+    }
+
+    100% {
+        display: none;
+        height: 0;
+    }
+}
+
+.collapsible_text {
+    margin: 10px;
+}
+
+                                        /* Chat */
+/* --------------------------------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------------------------- */
+
+.chat_box {
+    position: relative;
+}
+
+.open_popup {
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: red;
+
+    position: absolute;
+    z-index: 99;
+    right: 30px;
+    bottom: 30px;
+
+    animation: show-button 200ms linear;
+}
+
+.open_popup:hover {
+    outline: 5px solid red;
+}
+
+.open_popup:hover:active {
+    background-color: rgb(255, 115, 0);
+    outline: 5px solid rgb(255, 115, 0);
+}
+
+.hidden_button {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    display: none;
+
+    animation: hide-button 200ms linear;
+}
+
+@keyframes hide-button {
+    0% {
+        opacity: 1;
+        width: 50px;
+        height: 50px;
+        display: block;
+    }
+
+    100% {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        display: none;
+    }
+}
+
+@keyframes show-button {
+    0% {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        display: none;
+    }
+
+    1% {
+        display: block;
+    }
+
+    100% {
+        opacity: 1;
+        width: 50px;
+        height: 50px;
+        display: block;
+    }
+}
+
+.popup_box {
+    width: 200px;
+    height: 240px;
+
+    background-color: white;
+    padding: 10px;
+
+    position: absolute;
+    z-index: 100;
+    right: 50px;
+    bottom: 50px;
+
+    box-shadow: 0 0 15px 5px gray;
+    animation: show-popup 200ms linear;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.hide_popup {
+    display: none;
+    animation: hide-popup 200ms linear;
+}
+
+@keyframes show-popup {
+    0% {
+        width: 150px;
+        height: 180px;
+        right: 80px;
+        bottom: 80px;
+        display: none;
+    }
+
+    1% {
+        display: block;
+    }
+
+    100% {
+        width: 200px;
+        height: 240px;
+        right: 50px;
+        bottom: 50px;
+        display: block;
+    }
+}
+
+@keyframes hide-popup {
+    0% {
+        width: 200px;
+        height: 240px;
+        right: 50px;
+        bottom: 50px;
+        display: block;
+    }
+
+    100% {
+        width: 150px;
+        height: 180px;
+        right: 80px;
+        bottom: 80px;
+        display: none;
+    }   
+}
+
+.popup_header {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+}
+
+.popup_title {
+    align-self: flex-end;
+}
+
+.btn_hide-popup {
+    width: 10px;
+    height: 10px;
+
+    background-image: url('../img/delete_black_thin.png');
+    background-color: inherit;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border: none;
+    transition: all 100ms;
+
+    margin-top: 1px;
+    margin-right: 1px;
+}
+
+.btn_hide-popup:hover {
+    width: 12px;
+    height: 12px;
+
+    margin-top: 0;
+    margin-right: 0;
+}
+
+.enter-text_feedback {
+    max-width: 100%;
+    min-width: 100%;
+
+    flex-grow: 1;
+    flex-shrink: 0;
+
+    resize: none;
+}
+
+.send_feedback {
+    width: 100%;
+    margin-top: 10px;
+}
+
+                                        /* Liker */
+/* --------------------------------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------------------------- */
+
+.liker_box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.add_like {
+    align-self: center;
+    
+    padding: 10px;
+    margin-bottom: 30px;
+
+    width: 100px;
+
+    color: white;
+    background-color: red;
+
+    border: none;
+    border-radius: 10px;
+
+    box-shadow: 0 10px 10px black;
+
+    opacity: 0.8;
+}
+
+.add_like:hover {
+    opacity: 1;
+}
+
+.add_like:active {
+    transform: translateY(5px);
+    box-shadow: 0 5px 5px black;
+    opacity: 1;
+}
+
+.heart {
+    height: 40px;
+    width: 40px;
+
+    background-image: url('../img/heart.png');
+    background-size: cover;
+
+    position: absolute;
+    z-index: 99;
+
+    display: none;
+}
+
+.move {
+    display: block;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+}
+
+@keyframes flying-heart-1 {
+    0% {
+        opacity: 1;
+        display: none;
+    }
+
+    1% {
+        display: block;
+    }
+
+    25% {
+        transform: translate(-50px, -50px);
+        opacity: 0.75;
+    }
+
+    50% {
+        transform: translate(0, -100px);
+        opacity: 0.5;
+    }
+
+    75% {
+        transform: translate(50px, -150px);
+        opacity: 0.25;
+    }
+
+    100% {
+        transform: translate(0, -200px);
+        opacity: 0.1;
+        display: block;
+    }
+}
+
+@keyframes flying-heart-2 {
+    0% {
+        opacity: 1;
+        display: none;
+    }
+
+    1% {
+        display: block;
+    }
+
+    25% {
+        transform: translate(0, -50px);
+        opacity: 0.75;
+    }
+
+    50% {
+        transform: translate(50px, -100px);
+        opacity: 0.5;
+    }
+
+    75% {
+        transform: translate(-50px, -150px);
+        opacity: 0.25;
+    }
+
+    100% {
+        transform: translate(0, -200px);
+        opacity: 0.1;
+        display: block;
+    }
+}
+
+@keyframes flying-heart-3 {
+    0% {
+        opacity: 1;
+        display: none;
+    }
+
+    1% {
+        display: block;
+    }
+
+    25% {
+        transform: translate(0, -50px);
+        opacity: 0.75;
+    }
+
+    50% {
+        transform: translate(-50px, -100px);
+        opacity: 0.5;
+    }
+
+    75% {
+        transform: translate(50px, -150px);
+        opacity: 0.25;
+    }
+
+    100% {
+        transform: translate(0, -200px);
+        opacity: 0.1;
+        display: block;
+    }
+}
+
+@keyframes flying-heart-4 {
+    0% {
+        opacity: 1;
+        display: none;
+    }
+
+    1% {
+        display: block;
+    }
+
+    25% {
+        transform: translate(50px, -50px);
+        opacity: 0.75;
+    }
+
+    50% {
+        transform: translate(0, -100px);
+        opacity: 0.5;
+    }
+
+    75% {
+        transform: translate(-50px, -150px);
+        opacity: 0.25;
+    }
+
+    100% {
+        transform: translate(0, -200px);
+        opacity: 0.1;
+        display: block;
+    }
+}
